@@ -1,0 +1,15 @@
+* projekt 4: wtornik darlingtona npn op ac tr(SR trapezowy)
+Vin 1 0 3 AC 1
+rb 1 5 1k
+q1 2 5 3 mq1
+q2 2 3 4 mq1
+re 4 0 100k
+vcc 2 0 12
+.Model mq1 npn is=1e-15 bf=100 br=10 nf=1 nr=1 rb=50 tf=0.1n tr=10n cjc=2p cje=0.2p vjc=0.5 vje=0.6 mjc=0.5 mje=0.5
+*.OP
+*.AC dec 100 10 1g
+.TRAN 1u  0.1m
+*.save V(1)
+*.print V(1)
+*.probe
+.end
